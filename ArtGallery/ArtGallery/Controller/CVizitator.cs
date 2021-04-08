@@ -12,14 +12,12 @@ namespace ArtGallery.Controller
 {
     class CVizitator
     {
-        private VVizitator vVizitator;
-        private VWelcome vWelcome;
+        private VVizitator vVizitator;       
         private PersistentaOperaArta pOpera;
 
         public CVizitator()
         {
-            this.vVizitator = new VVizitator();
-            this.vWelcome = new VWelcome();
+            this.vVizitator = new VVizitator();            
             this.pOpera = new PersistentaOperaArta();
             this.GestionareEvenimente();
         }
@@ -29,18 +27,11 @@ namespace ArtGallery.Controller
             return vVizitator;
         }
 
-        public VWelcome GetVWelcome()
-        {
-            return vWelcome;
-        }
         private void GestionareEvenimente()
         {
             this.vVizitator.GetButtonRefresh().Click += new EventHandler(refresh);
-            this.vVizitator.GetButtonCautare().Click += new EventHandler(cautare);
-            //this.vVizitator.GetDataGridViewOpere().Click += new EventHandler(selectie);
-
+            this.vVizitator.GetButtonCautare().Click += new EventHandler(cautare);       
         }
-
        
         private void refresh(object sender, EventArgs e)
         {

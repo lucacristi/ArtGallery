@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CAdministrator.cs" />
+    <Compile Include="Controller\CAngajat.cs" />
     <Compile Include="Controller\CSignup.cs" />
     <Compile Include="Controller\CVizitator.cs" />
     <Compile Include="Controller\CWelcome.cs" />

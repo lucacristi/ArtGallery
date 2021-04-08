@@ -33,20 +33,14 @@ namespace ArtGallery.View
             return this.buttonLogin;
         }
 
-        private void linkLabelContinueVizitator_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        public LinkLabel GetLinkLabelContinuaCaVizitator()
         {
-            // Show another form.
-            this.Hide();
-            CVizitator cVizitator = new CVizitator();
-            cVizitator.GetVVizitator().Show();
+            return this.linkLabelContinueVizitator;
         }
 
-        private void linkLabelSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        public LinkLabel GetLinkLabelSignUp()
         {
-            
-            this.Hide();
-            CSignup cSignup = new CSignup();
-            cSignup.GetVSignup().Show();
+            return this.linkLabelSignUp;
         }
     }
 }

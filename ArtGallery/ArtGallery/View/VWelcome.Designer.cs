@@ -114,8 +114,7 @@
             this.linkLabelContinueVizitator.Size = new System.Drawing.Size(176, 24);
             this.linkLabelContinueVizitator.TabIndex = 7;
             this.linkLabelContinueVizitator.TabStop = true;
-            this.linkLabelContinueVizitator.Text = "Continua ca vizitator";
-            this.linkLabelContinueVizitator.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelContinueVizitator_LinkClicked);
+            this.linkLabelContinueVizitator.Text = "Continua ca vizitator";      
             // 
             // label1
             // 
@@ -134,8 +133,7 @@
             this.linkLabelSignUp.Size = new System.Drawing.Size(66, 17);
             this.linkLabelSignUp.TabIndex = 9;
             this.linkLabelSignUp.TabStop = true;
-            this.linkLabelSignUp.Text = "Inscrie-te";
-            this.linkLabelSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSignUp_LinkClicked);
+            this.linkLabelSignUp.Text = "Inscrie-te";         
             // 
             // label2
             // 

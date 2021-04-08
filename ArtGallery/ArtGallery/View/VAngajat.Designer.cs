@@ -55,6 +55,7 @@
             this.buttonSterge = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonAdauga = new System.Windows.Forms.Button();
+            this.buttonLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,7 +159,7 @@
             // 
             this.labelDisplayUsername.AutoSize = true;
             this.labelDisplayUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDisplayUsername.Location = new System.Drawing.Point(960, 14);
+            this.labelDisplayUsername.Location = new System.Drawing.Point(850, 14);
             this.labelDisplayUsername.Name = "labelDisplayUsername";
             this.labelDisplayUsername.Size = new System.Drawing.Size(128, 29);
             this.labelDisplayUsername.TabIndex = 40;
@@ -298,11 +299,21 @@
             this.buttonAdauga.Text = "Adauga";
             this.buttonAdauga.UseVisualStyleBackColor = true;
             // 
+            // buttonLogout
+            // 
+            this.buttonLogout.Location = new System.Drawing.Point(993, 663);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(76, 30);
+            this.buttonLogout.TabIndex = 41;
+            this.buttonLogout.Text = "Log out";
+            this.buttonLogout.UseVisualStyleBackColor = true;
+            // 
             // VAngajat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1097, 705);
+            this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.labelDisplayUsername);
             this.Controls.Add(this.textBoxTehnica);
             this.Controls.Add(this.textBoxGen_Tip);
@@ -329,7 +340,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "VAngajat";
             this.Text = "VOpereArtaAngajat";
-            this.Load += new System.EventHandler(this.VAngajat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -365,5 +375,6 @@
         private System.Windows.Forms.Button buttonSterge;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonAdauga;
+        private System.Windows.Forms.Button buttonLogout;
     }
 }
