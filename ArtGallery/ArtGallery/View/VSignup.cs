@@ -17,9 +17,19 @@ namespace ArtGallery.View
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public TextBox GetTextUsername()
         {
+            return this.textBoxUsername;
+        }
 
+        public TextBox GetTextPassword()
+        {
+            return this.textBoxPassword;
+        }
+
+        public Button GetButtonSignup()
+        {
+            return this.button1;
         }
     }
 }
