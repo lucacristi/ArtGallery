@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArtGallery.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,13 @@ namespace ArtGallery.View
         public Button GetButtonSignup()
         {
             return this.button1;
+        }
+
+        private void linkLabelLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            CWelcome cWelcome = new CWelcome();
+            cWelcome.GetVWelcome().Show();
         }
     }
 }

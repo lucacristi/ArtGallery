@@ -39,16 +39,14 @@ namespace ArtGallery.View
             this.Hide();
             CVizitator cVizitator = new CVizitator();
             cVizitator.GetVVizitator().Show();
-            linkLabelContinueVizitator.LinkVisited = true;
         }
 
         private void linkLabelSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             
             this.Hide();
-            VSignup signup = new VSignup();
-            signup.ShowDialog();
-
+            CSignup cSignup = new CSignup();
+            cSignup.GetVSignup().Show();
         }
     }
 }

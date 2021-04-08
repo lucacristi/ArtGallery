@@ -34,6 +34,7 @@
             this.labelPass = new System.Windows.Forms.Label();
             this.labelUsername = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.linkLabelLogin = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -45,12 +46,12 @@
             this.label1.Size = new System.Drawing.Size(106, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sign Up";
-  //          this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBoxPassword
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(293, 198);
             this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(213, 22);
             this.textBoxPassword.TabIndex = 9;
             // 
@@ -90,18 +91,30 @@
             this.button1.Text = "Sign Up";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // Signup
+            // linkLabelLogin
+            // 
+            this.linkLabelLogin.AutoSize = true;
+            this.linkLabelLogin.Location = new System.Drawing.Point(352, 315);
+            this.linkLabelLogin.Name = "linkLabelLogin";
+            this.linkLabelLogin.Size = new System.Drawing.Size(98, 17);
+            this.linkLabelLogin.TabIndex = 11;
+            this.linkLabelLogin.TabStop = true;
+            this.linkLabelLogin.Text = "Back to Log in";
+            this.linkLabelLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelLogin_LinkClicked);
+            // 
+            // VSignup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.linkLabelLogin);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.labelPass);
             this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.label1);
-            this.Name = "Signup";
+            this.Name = "VSignup";
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -116,5 +129,6 @@
         private System.Windows.Forms.Label labelPass;
         private System.Windows.Forms.Label labelUsername;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.LinkLabel linkLabelLogin;
     }
 }

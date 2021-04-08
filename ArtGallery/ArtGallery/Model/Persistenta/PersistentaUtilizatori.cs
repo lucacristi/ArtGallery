@@ -33,7 +33,7 @@ namespace ArtGallery.Model.Persistenta
                 XElement xElement = XElement.Load(@numeFisier);
                 xElement.Add(new XElement(tagUtilizator,
                     new XElement(tagUsername, utilizator.GetUsername()),
-                    new XElement(tagPassword, utilizator.GetUsername()),
+                    new XElement(tagPassword, utilizator.GetPassword()),
                     new XElement(tagTipUtilizator, utilizator.GetTipUtilizator())
                     ));
                 xElement.Save(@numeFisier);
