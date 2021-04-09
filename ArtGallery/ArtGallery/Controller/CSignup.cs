@@ -29,13 +29,14 @@ namespace ArtGallery.Controller
 
         private void gestionareEvenimente()
         {
-            this.vSignup.GetButtonSignup().Click += new EventHandler(signup);            
+            this.vSignup.GetButtonSignup().Click += new EventHandler(signup);
+            this.vSignup.GetLabelBackToLogin().Click += new EventHandler(backToLogin);
         }
 
         private void signup(object sender, EventArgs e)
         {
-            string username = this.vSignup.GetTextUsername().Text;            
-            string password = this.vSignup.GetTextPassword().Text;            
+            string username = this.vSignup.GetTextUsername().Text;
+            string password = this.vSignup.GetTextPassword().Text;
 
             if (username.Length > 0 && password.Length > 0)
             {
@@ -55,9 +56,13 @@ namespace ArtGallery.Controller
             else
             {
                 MessageBox.Show("Nu s-a introdus username sau password!");
-            }            
+            }
         }
-    }
-
-    
+        private void backToLogin(object sender, EventArgs e)
+        {
+            this.vSignup.Hide();
+            CWelcome cWelcome = new CWelcome();
+            cWelcome.GetVWelcome().Show();
+        }
+    }    
 }

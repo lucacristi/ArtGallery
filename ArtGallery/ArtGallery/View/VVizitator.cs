@@ -47,20 +47,14 @@ namespace ArtGallery
             return this.dataGridView1;
         }
 
-
-        private void buttonBack_Click(object sender, EventArgs e)
+        public Button GetButtonBack()
         {
-            // Show another form.
-            this.Hide();
-            CWelcome cWelcome = new CWelcome();
-            cWelcome.GetVWelcome().Show();            
+            return this.buttonBack;
         }
 
-        private void buttonAutentificare_Click(object sender, EventArgs e)
+        public Button GetButtonAutentificare()
         {
-            this.Hide();
-            CWelcome cWelcome = new CWelcome();
-            cWelcome.GetVWelcome().Show();
+            return this.buttonAutentificare;
         }
     }
 }

@@ -15,6 +15,7 @@ namespace ArtGallery.View
         public VAngajat()
         {
             InitializeComponent();
+            this.dataGridView1.AllowUserToAddRows = false;
             for (int i = 0; i < dataGridView1.ColumnCount; i++)
                 this.dataGridView1.Columns[i].ReadOnly = true;
         }

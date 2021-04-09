@@ -33,11 +33,9 @@ namespace ArtGallery.View
             return this.button1;
         }
 
-        private void linkLabelLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        public LinkLabel GetLabelBackToLogin()
         {
-            this.Hide();
-            CWelcome cWelcome = new CWelcome();
-            cWelcome.GetVWelcome().Show();
+            return this.linkLabelLogin;
         }
     }
 }

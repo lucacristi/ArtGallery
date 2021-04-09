@@ -100,7 +100,6 @@
             this.linkLabelLogin.TabIndex = 11;
             this.linkLabelLogin.TabStop = true;
             this.linkLabelLogin.Text = "Back to Log in";
-            this.linkLabelLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelLogin_LinkClicked);
             // 
             // VSignup
             // 

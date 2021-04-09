@@ -36,9 +36,6 @@
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.labelListaOpere = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Titlu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeArtist = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AnRealizare = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelDisplayUsername = new System.Windows.Forms.Label();
             this.textBoxTehnica = new System.Windows.Forms.TextBox();
             this.textBoxGen_Tip = new System.Windows.Forms.TextBox();
@@ -56,12 +53,19 @@
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonAdauga = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
+            this.TipOpera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titlu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeArtist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AnRealizare = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GenPictura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TehnicaPictura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipSculptura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonCauta
             // 
-            this.buttonCauta.Location = new System.Drawing.Point(28, 561);
+            this.buttonCauta.Location = new System.Drawing.Point(28, 576);
             this.buttonCauta.Name = "buttonCauta";
             this.buttonCauta.Size = new System.Drawing.Size(75, 23);
             this.buttonCauta.TabIndex = 15;
@@ -72,7 +76,7 @@
             // 
             this.labelInformatieCautata.AutoSize = true;
             this.labelInformatieCautata.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInformatieCautata.Location = new System.Drawing.Point(25, 485);
+            this.labelInformatieCautata.Location = new System.Drawing.Point(25, 500);
             this.labelInformatieCautata.Name = "labelInformatieCautata";
             this.labelInformatieCautata.Size = new System.Drawing.Size(296, 29);
             this.labelInformatieCautata.TabIndex = 14;
@@ -80,7 +84,7 @@
             // 
             // textBoxInformatieCautata
             // 
-            this.textBoxInformatieCautata.Location = new System.Drawing.Point(28, 517);
+            this.textBoxInformatieCautata.Location = new System.Drawing.Point(28, 532);
             this.textBoxInformatieCautata.Name = "textBoxInformatieCautata";
             this.textBoxInformatieCautata.Size = new System.Drawing.Size(100, 22);
             this.textBoxInformatieCautata.TabIndex = 13;
@@ -91,7 +95,7 @@
             this.comboBoxCriteriu.Items.AddRange(new object[] {
             "Nume artist",
             "Tip opera"});
-            this.comboBoxCriteriu.Location = new System.Drawing.Point(28, 443);
+            this.comboBoxCriteriu.Location = new System.Drawing.Point(28, 458);
             this.comboBoxCriteriu.Name = "comboBoxCriteriu";
             this.comboBoxCriteriu.Size = new System.Drawing.Size(121, 24);
             this.comboBoxCriteriu.TabIndex = 12;
@@ -100,7 +104,7 @@
             // 
             this.labelCriteriuFiltrare.AutoSize = true;
             this.labelCriteriuFiltrare.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCriteriuFiltrare.Location = new System.Drawing.Point(25, 402);
+            this.labelCriteriuFiltrare.Location = new System.Drawing.Point(25, 417);
             this.labelCriteriuFiltrare.Name = "labelCriteriuFiltrare";
             this.labelCriteriuFiltrare.Size = new System.Drawing.Size(263, 29);
             this.labelCriteriuFiltrare.TabIndex = 11;
@@ -108,7 +112,7 @@
             // 
             // buttonRefresh
             // 
-            this.buttonRefresh.Location = new System.Drawing.Point(220, 348);
+            this.buttonRefresh.Location = new System.Drawing.Point(747, 355);
             this.buttonRefresh.Name = "buttonRefresh";
             this.buttonRefresh.Size = new System.Drawing.Size(75, 23);
             this.buttonRefresh.TabIndex = 10;
@@ -119,7 +123,7 @@
             // 
             this.labelListaOpere.AutoSize = true;
             this.labelListaOpere.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListaOpere.Location = new System.Drawing.Point(124, 25);
+            this.labelListaOpere.Location = new System.Drawing.Point(463, 34);
             this.labelListaOpere.Name = "labelListaOpere";
             this.labelListaOpere.Size = new System.Drawing.Size(276, 26);
             this.labelListaOpere.TabIndex = 9;
@@ -129,14 +133,180 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TipOpera,
             this.Titlu,
             this.NumeArtist,
-            this.AnRealizare});
+            this.AnRealizare,
+            this.GenPictura,
+            this.TehnicaPictura,
+            this.TipSculptura});
             this.dataGridView1.Location = new System.Drawing.Point(30, 73);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(483, 258);
+            this.dataGridView1.Size = new System.Drawing.Size(1127, 258);
             this.dataGridView1.TabIndex = 8;
+            // 
+            // labelDisplayUsername
+            // 
+            this.labelDisplayUsername.AutoSize = true;
+            this.labelDisplayUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDisplayUsername.Location = new System.Drawing.Point(954, 9);
+            this.labelDisplayUsername.Name = "labelDisplayUsername";
+            this.labelDisplayUsername.Size = new System.Drawing.Size(128, 29);
+            this.labelDisplayUsername.TabIndex = 40;
+            this.labelDisplayUsername.Text = "username";
+            // 
+            // textBoxTehnica
+            // 
+            this.textBoxTehnica.Location = new System.Drawing.Point(941, 717);
+            this.textBoxTehnica.Name = "textBoxTehnica";
+            this.textBoxTehnica.Size = new System.Drawing.Size(216, 22);
+            this.textBoxTehnica.TabIndex = 39;
+            this.textBoxTehnica.Visible = false;
+            // 
+            // textBoxGen_Tip
+            // 
+            this.textBoxGen_Tip.Location = new System.Drawing.Point(941, 671);
+            this.textBoxGen_Tip.Name = "textBoxGen_Tip";
+            this.textBoxGen_Tip.Size = new System.Drawing.Size(216, 22);
+            this.textBoxGen_Tip.TabIndex = 38;
+            this.textBoxGen_Tip.Visible = false;
+            // 
+            // labelTehnica
+            // 
+            this.labelTehnica.AutoSize = true;
+            this.labelTehnica.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTehnica.Location = new System.Drawing.Point(819, 710);
+            this.labelTehnica.Name = "labelTehnica";
+            this.labelTehnica.Size = new System.Drawing.Size(107, 29);
+            this.labelTehnica.TabIndex = 37;
+            this.labelTehnica.Text = "Tehnica";
+            this.labelTehnica.Visible = false;
+            // 
+            // labelGen_Tip
+            // 
+            this.labelGen_Tip.AutoSize = true;
+            this.labelGen_Tip.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGen_Tip.Location = new System.Drawing.Point(757, 664);
+            this.labelGen_Tip.Name = "labelGen_Tip";
+            this.labelGen_Tip.Size = new System.Drawing.Size(108, 29);
+            this.labelGen_Tip.TabIndex = 36;
+            this.labelGen_Tip.Text = "Gen/Tip";
+            this.labelGen_Tip.Visible = false;
+            // 
+            // textBoxAnRealizare
+            // 
+            this.textBoxAnRealizare.Location = new System.Drawing.Point(941, 584);
+            this.textBoxAnRealizare.Name = "textBoxAnRealizare";
+            this.textBoxAnRealizare.Size = new System.Drawing.Size(216, 22);
+            this.textBoxAnRealizare.TabIndex = 35;
+            // 
+            // textBoxNumeArtist
+            // 
+            this.textBoxNumeArtist.Location = new System.Drawing.Point(941, 538);
+            this.textBoxNumeArtist.Name = "textBoxNumeArtist";
+            this.textBoxNumeArtist.Size = new System.Drawing.Size(216, 22);
+            this.textBoxNumeArtist.TabIndex = 34;
+            // 
+            // textBoxTitlu
+            // 
+            this.textBoxTitlu.Location = new System.Drawing.Point(941, 492);
+            this.textBoxTitlu.Name = "textBoxTitlu";
+            this.textBoxTitlu.Size = new System.Drawing.Size(216, 22);
+            this.textBoxTitlu.TabIndex = 33;
+            // 
+            // labelAnRealizare
+            // 
+            this.labelAnRealizare.AutoSize = true;
+            this.labelAnRealizare.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAnRealizare.Location = new System.Drawing.Point(783, 577);
+            this.labelAnRealizare.Name = "labelAnRealizare";
+            this.labelAnRealizare.Size = new System.Drawing.Size(152, 29);
+            this.labelAnRealizare.TabIndex = 32;
+            this.labelAnRealizare.Text = "An realizare";
+            // 
+            // labelNumeArtist
+            // 
+            this.labelNumeArtist.AutoSize = true;
+            this.labelNumeArtist.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumeArtist.Location = new System.Drawing.Point(787, 531);
+            this.labelNumeArtist.Name = "labelNumeArtist";
+            this.labelNumeArtist.Size = new System.Drawing.Size(148, 29);
+            this.labelNumeArtist.TabIndex = 31;
+            this.labelNumeArtist.Text = "Nume Artist";
+            // 
+            // labelTitlu
+            // 
+            this.labelTitlu.AutoSize = true;
+            this.labelTitlu.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitlu.Location = new System.Drawing.Point(870, 485);
+            this.labelTitlu.Name = "labelTitlu";
+            this.labelTitlu.Size = new System.Drawing.Size(65, 29);
+            this.labelTitlu.TabIndex = 30;
+            this.labelTitlu.Text = "Titlu";
+            // 
+            // labelTipOpera
+            // 
+            this.labelTipOpera.AutoSize = true;
+            this.labelTipOpera.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTipOpera.Location = new System.Drawing.Point(808, 417);
+            this.labelTipOpera.Name = "labelTipOpera";
+            this.labelTipOpera.Size = new System.Drawing.Size(127, 29);
+            this.labelTipOpera.TabIndex = 29;
+            this.labelTipOpera.Text = "Tip opera";
+            // 
+            // comboBoxTipOpera
+            // 
+            this.comboBoxTipOpera.FormattingEnabled = true;
+            this.comboBoxTipOpera.Items.AddRange(new object[] {
+            "Opera de Arta",
+            "Tablou",
+            "Sculptura"});
+            this.comboBoxTipOpera.Location = new System.Drawing.Point(941, 424);
+            this.comboBoxTipOpera.Name = "comboBoxTipOpera";
+            this.comboBoxTipOpera.Size = new System.Drawing.Size(216, 24);
+            this.comboBoxTipOpera.TabIndex = 28;
+            // 
+            // buttonSterge
+            // 
+            this.buttonSterge.Location = new System.Drawing.Point(619, 355);
+            this.buttonSterge.Name = "buttonSterge";
+            this.buttonSterge.Size = new System.Drawing.Size(75, 23);
+            this.buttonSterge.TabIndex = 27;
+            this.buttonSterge.Text = "Sterge";
+            this.buttonSterge.UseVisualStyleBackColor = true;
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.Location = new System.Drawing.Point(500, 355);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(75, 23);
+            this.buttonEdit.TabIndex = 26;
+            this.buttonEdit.Text = "Editeaza";
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            // 
+            // buttonAdauga
+            // 
+            this.buttonAdauga.Location = new System.Drawing.Point(386, 355);
+            this.buttonAdauga.Name = "buttonAdauga";
+            this.buttonAdauga.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdauga.TabIndex = 25;
+            this.buttonAdauga.Text = "Adauga";
+            this.buttonAdauga.UseVisualStyleBackColor = true;
+            // 
+            // buttonLogout
+            // 
+            this.buttonLogout.Location = new System.Drawing.Point(531, 713);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(76, 30);
+            this.buttonLogout.TabIndex = 41;
+            this.buttonLogout.Text = "Log out";
+            this.buttonLogout.UseVisualStyleBackColor = true;
+            // 
+            // TipOpera
+            // 
+            this.TipOpera.HeaderText = "Tip Opera";
+            this.TipOpera.Name = "TipOpera";
             // 
             // Titlu
             // 
@@ -155,164 +325,26 @@
             this.AnRealizare.HeaderText = "An Realizare Opera";
             this.AnRealizare.Name = "AnRealizare";
             // 
-            // labelDisplayUsername
+            // GenPictura
             // 
-            this.labelDisplayUsername.AutoSize = true;
-            this.labelDisplayUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDisplayUsername.Location = new System.Drawing.Point(850, 14);
-            this.labelDisplayUsername.Name = "labelDisplayUsername";
-            this.labelDisplayUsername.Size = new System.Drawing.Size(128, 29);
-            this.labelDisplayUsername.TabIndex = 40;
-            this.labelDisplayUsername.Text = "username";
+            this.GenPictura.HeaderText = "Gen Pictura";
+            this.GenPictura.Name = "GenPictura";
             // 
-            // textBoxTehnica
+            // TehnicaPictura
             // 
-            this.textBoxTehnica.Location = new System.Drawing.Point(844, 392);
-            this.textBoxTehnica.Name = "textBoxTehnica";
-            this.textBoxTehnica.Size = new System.Drawing.Size(216, 22);
-            this.textBoxTehnica.TabIndex = 39;
+            this.TehnicaPictura.HeaderText = "Tehnica Pictura";
+            this.TehnicaPictura.Name = "TehnicaPictura";
             // 
-            // textBoxGen_Tip
+            // TipSculptura
             // 
-            this.textBoxGen_Tip.Location = new System.Drawing.Point(844, 346);
-            this.textBoxGen_Tip.Name = "textBoxGen_Tip";
-            this.textBoxGen_Tip.Size = new System.Drawing.Size(216, 22);
-            this.textBoxGen_Tip.TabIndex = 38;
-            // 
-            // labelTehnica
-            // 
-            this.labelTehnica.AutoSize = true;
-            this.labelTehnica.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTehnica.Location = new System.Drawing.Point(731, 385);
-            this.labelTehnica.Name = "labelTehnica";
-            this.labelTehnica.Size = new System.Drawing.Size(107, 29);
-            this.labelTehnica.TabIndex = 37;
-            this.labelTehnica.Text = "Tehnica";
-            // 
-            // labelGen_Tip
-            // 
-            this.labelGen_Tip.AutoSize = true;
-            this.labelGen_Tip.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGen_Tip.Location = new System.Drawing.Point(525, 339);
-            this.labelGen_Tip.Name = "labelGen_Tip";
-            this.labelGen_Tip.Size = new System.Drawing.Size(313, 29);
-            this.labelGen_Tip.TabIndex = 36;
-            this.labelGen_Tip.Text = "Gen Pictura/Tip Sculptura";
-            // 
-            // textBoxAnRealizare
-            // 
-            this.textBoxAnRealizare.Location = new System.Drawing.Point(844, 259);
-            this.textBoxAnRealizare.Name = "textBoxAnRealizare";
-            this.textBoxAnRealizare.Size = new System.Drawing.Size(216, 22);
-            this.textBoxAnRealizare.TabIndex = 35;
-            // 
-            // textBoxNumeArtist
-            // 
-            this.textBoxNumeArtist.Location = new System.Drawing.Point(844, 213);
-            this.textBoxNumeArtist.Name = "textBoxNumeArtist";
-            this.textBoxNumeArtist.Size = new System.Drawing.Size(216, 22);
-            this.textBoxNumeArtist.TabIndex = 34;
-            // 
-            // textBoxTitlu
-            // 
-            this.textBoxTitlu.Location = new System.Drawing.Point(844, 167);
-            this.textBoxTitlu.Name = "textBoxTitlu";
-            this.textBoxTitlu.Size = new System.Drawing.Size(216, 22);
-            this.textBoxTitlu.TabIndex = 33;
-            // 
-            // labelAnRealizare
-            // 
-            this.labelAnRealizare.AutoSize = true;
-            this.labelAnRealizare.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAnRealizare.Location = new System.Drawing.Point(686, 252);
-            this.labelAnRealizare.Name = "labelAnRealizare";
-            this.labelAnRealizare.Size = new System.Drawing.Size(152, 29);
-            this.labelAnRealizare.TabIndex = 32;
-            this.labelAnRealizare.Text = "An realizare";
-            // 
-            // labelNumeArtist
-            // 
-            this.labelNumeArtist.AutoSize = true;
-            this.labelNumeArtist.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumeArtist.Location = new System.Drawing.Point(690, 206);
-            this.labelNumeArtist.Name = "labelNumeArtist";
-            this.labelNumeArtist.Size = new System.Drawing.Size(148, 29);
-            this.labelNumeArtist.TabIndex = 31;
-            this.labelNumeArtist.Text = "Nume Artist";
-            // 
-            // labelTitlu
-            // 
-            this.labelTitlu.AutoSize = true;
-            this.labelTitlu.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitlu.Location = new System.Drawing.Point(773, 160);
-            this.labelTitlu.Name = "labelTitlu";
-            this.labelTitlu.Size = new System.Drawing.Size(65, 29);
-            this.labelTitlu.TabIndex = 30;
-            this.labelTitlu.Text = "Titlu";
-            // 
-            // labelTipOpera
-            // 
-            this.labelTipOpera.AutoSize = true;
-            this.labelTipOpera.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTipOpera.Location = new System.Drawing.Point(711, 92);
-            this.labelTipOpera.Name = "labelTipOpera";
-            this.labelTipOpera.Size = new System.Drawing.Size(127, 29);
-            this.labelTipOpera.TabIndex = 29;
-            this.labelTipOpera.Text = "Tip opera";
-            // 
-            // comboBoxTipOpera
-            // 
-            this.comboBoxTipOpera.FormattingEnabled = true;
-            this.comboBoxTipOpera.Items.AddRange(new object[] {
-            "Opera de Arta",
-            "Tablou",
-            "Sculptura"});
-            this.comboBoxTipOpera.Location = new System.Drawing.Point(844, 99);
-            this.comboBoxTipOpera.Name = "comboBoxTipOpera";
-            this.comboBoxTipOpera.Size = new System.Drawing.Size(216, 24);
-            this.comboBoxTipOpera.TabIndex = 28;
-            // 
-            // buttonSterge
-            // 
-            this.buttonSterge.Location = new System.Drawing.Point(550, 196);
-            this.buttonSterge.Name = "buttonSterge";
-            this.buttonSterge.Size = new System.Drawing.Size(75, 23);
-            this.buttonSterge.TabIndex = 27;
-            this.buttonSterge.Text = "Sterge";
-            this.buttonSterge.UseVisualStyleBackColor = true;
-            // 
-            // buttonEdit
-            // 
-            this.buttonEdit.Location = new System.Drawing.Point(550, 149);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(75, 23);
-            this.buttonEdit.TabIndex = 26;
-            this.buttonEdit.Text = "Editeaza";
-            this.buttonEdit.UseVisualStyleBackColor = true;
-            // 
-            // buttonAdauga
-            // 
-            this.buttonAdauga.Location = new System.Drawing.Point(550, 98);
-            this.buttonAdauga.Name = "buttonAdauga";
-            this.buttonAdauga.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdauga.TabIndex = 25;
-            this.buttonAdauga.Text = "Adauga";
-            this.buttonAdauga.UseVisualStyleBackColor = true;
-            // 
-            // buttonLogout
-            // 
-            this.buttonLogout.Location = new System.Drawing.Point(993, 663);
-            this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(76, 30);
-            this.buttonLogout.TabIndex = 41;
-            this.buttonLogout.Text = "Log out";
-            this.buttonLogout.UseVisualStyleBackColor = true;
+            this.TipSculptura.HeaderText = "Tip Sculptura";
+            this.TipSculptura.Name = "TipSculptura";
             // 
             // VAngajat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1097, 705);
+            this.ClientSize = new System.Drawing.Size(1234, 752);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.labelDisplayUsername);
             this.Controls.Add(this.textBoxTehnica);
@@ -356,9 +388,6 @@
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Label labelListaOpere;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Titlu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumeArtist;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AnRealizare;
         private System.Windows.Forms.Label labelDisplayUsername;
         private System.Windows.Forms.TextBox textBoxTehnica;
         private System.Windows.Forms.TextBox textBoxGen_Tip;
@@ -376,5 +405,12 @@
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonAdauga;
         private System.Windows.Forms.Button buttonLogout;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipOpera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Titlu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeArtist;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AnRealizare;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GenPictura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TehnicaPictura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipSculptura;
     }
 }
