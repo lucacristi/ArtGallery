@@ -93,12 +93,18 @@
             // 
             this.comboBoxCriteriu.FormattingEnabled = true;
             this.comboBoxCriteriu.Items.AddRange(new object[] {
-            "Nume artist",
-            "Tip opera"});
+            "Tip Opera",
+            "Titlu Opera",
+            "Nume Artist",
+            "An Realizare",
+            "Gen Pictura",
+            "Tehnica Pictura",
+            "Tip Sculptura"});
             this.comboBoxCriteriu.Location = new System.Drawing.Point(28, 458);
             this.comboBoxCriteriu.Name = "comboBoxCriteriu";
             this.comboBoxCriteriu.Size = new System.Drawing.Size(121, 24);
             this.comboBoxCriteriu.TabIndex = 12;
+            this.comboBoxCriteriu.Text = "Tip Opera";
             // 
             // labelCriteriuFiltrare
             // 

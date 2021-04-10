@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ArtGallery.Controller
 {
     class CAngajat
@@ -100,6 +101,7 @@ namespace ArtGallery.Controller
                     vAngajat.GetDataGridViewOpere().Rows.Add(rand);
                 }
             }
+            clearFieldsContent();            
         }
 
         private void cautare(object sender, EventArgs e)
@@ -109,10 +111,30 @@ namespace ArtGallery.Controller
 
             if (informatie.Length > 0)
             {
-                if (index == 0)
-                    cautareDupaNumeArtist(informatie);
-                else
-                    cautareDupaTipOpera(informatie);
+                switch (index)
+                {
+                    case 0:
+                        cautareDupaCriteriu(informatie, "tipOpera");
+                        break;
+                    case 1:
+                        cautareDupaCriteriu(informatie, "titluOpera");
+                        break;
+                    case 2:
+                        cautareDupaCriteriu(informatie, "numeArtist");
+                        break;
+                    case 3:
+                        cautareDupaCriteriu(informatie, "anRealizare");
+                        break;
+                    case 4:
+                        cautareDupaCriteriu(informatie, "genPictura");
+                        break;
+                    case 5:
+                        cautareDupaCriteriu(informatie, "tehnicaPictura");
+                        break;
+                    case 6:
+                        cautareDupaCriteriu(informatie, "tipSculptura");
+                        break;
+                }
             }
             else
             {
@@ -120,10 +142,12 @@ namespace ArtGallery.Controller
             }
         }
 
-
         private void selectieTipOpera(object sender, EventArgs e)
         {
             int index = vAngajat.GetComboBoxTipOpera().SelectedIndex;
+
+            clearFieldsContent();
+            
             if (index == 0)
             {
                 vAngajat.GetLabelGenTip().Visible = false;
@@ -148,6 +172,7 @@ namespace ArtGallery.Controller
                 vAngajat.GetTextTehnica().Visible = false;
             }
         }
+
         private void adaugare(object sender, EventArgs e)
         {
             int indexTipOpera = vAngajat.GetComboBoxTipOpera().SelectedIndex;
@@ -174,12 +199,15 @@ namespace ArtGallery.Controller
                     MessageBox.Show("Exista deja o opera cu titlul \"" + titlu + "\"");
                 }
                 else
-                {
+                {                    
                     if (indexTipOpera == 0)
                     {
                         OperaArta operaArta = new OperaArta(titlu, numeArtist, anRealizare);
                         if (persistentaOperaArta.AdaugareOperaArta(operaArta))
+                        {
                             MessageBox.Show("Adaugare incheiata cu succes!");
+                            clearFieldsContent();
+                        }
                         else
                         {
                             MessageBox.Show("Nu s-a realizat adaugare in fisier!");
@@ -193,7 +221,10 @@ namespace ArtGallery.Controller
                         {
                             OperaArta operaArta = new Tablou(titlu, numeArtist, anRealizare, genPictura, tehnica);
                             if (persistentaOperaArta.AdaugareOperaArta(operaArta))
+                            {
                                 MessageBox.Show("Adaugare incheiata cu succes!");
+                                clearFieldsContent();
+                            }
                             else
                             {
                                 MessageBox.Show("Nu s-a realizat adaugare in fisier!");
@@ -211,7 +242,10 @@ namespace ArtGallery.Controller
                         {
                             OperaArta operaArta = new Sculptura(titlu, numeArtist, anRealizare, tipSculptura);
                             if (persistentaOperaArta.AdaugareOperaArta(operaArta))
+                            {
                                 MessageBox.Show("Adaugare incheiata cu succes!");
+                                clearFieldsContent();
+                            }
                             else
                             {
                                 MessageBox.Show("Nu s-a realizat adaugare in fisier!");
@@ -230,6 +264,7 @@ namespace ArtGallery.Controller
             }
 
         }
+
         private void editare(object sender, EventArgs e)
         {
             if (vAngajat.GetDataGridViewOpere().SelectedRows.Count == 0)
@@ -255,7 +290,6 @@ namespace ArtGallery.Controller
                     return;
                 }
 
-
                 if (titlu.Length > 0 && numeArtist.Length > 0 && anRealizare != Int32.MinValue)
                 {
                     if (persistentaOperaArta.CautaOpera(titluOperaSelectat) == null)
@@ -268,7 +302,11 @@ namespace ArtGallery.Controller
                         {
                             OperaArta operaArta = new OperaArta(titlu, numeArtist, anRealizare);
                             if (persistentaOperaArta.ActualizareOperaArta(titluOperaSelectat, operaArta))
+                            {
                                 MessageBox.Show("Actualizare incheiata cu succes!");
+                                refresh(sender, e);
+                            }
+
                             else
                             {
                                 MessageBox.Show("Nu s-a realizat actualizarea fisierului!");
@@ -282,7 +320,10 @@ namespace ArtGallery.Controller
                             {
                                 OperaArta operaArta = new Tablou(titlu, numeArtist, anRealizare, genPictura, tehnica);
                                 if (persistentaOperaArta.ActualizareOperaArta(titluOperaSelectat, operaArta))
+                                {
                                     MessageBox.Show("Actualizare incheiata cu succes!");
+                                    refresh(sender, e);
+                                }
                                 else
                                 {
                                     MessageBox.Show("Nu s-a realizat actualizarea fisierului!");
@@ -300,7 +341,10 @@ namespace ArtGallery.Controller
                             {
                                 OperaArta operaArta = new Sculptura(titlu, numeArtist, anRealizare, tipSculptura);
                                 if (persistentaOperaArta.ActualizareOperaArta(titluOperaSelectat, operaArta))
+                                {
                                     MessageBox.Show("Actualizare incheiata cu succes!");
+                                    refresh(sender, e);
+                                }
                                 else
                                 {
                                     MessageBox.Show("Nu s-a realizat actualizarea fisierului!");
@@ -319,12 +363,33 @@ namespace ArtGallery.Controller
                 }
             }
         }
+
         private void stergere(object sender, EventArgs e)
         {
+            if (vAngajat.GetDataGridViewOpere().SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nu exista nicio opera selectata pentru a fi stearsa");
+            }
+            else
+            {
+                string titluSelectat = (string)vAngajat.GetDataGridViewOpere().SelectedRows[0].Cells[indecsiGrid["TitluOpera"]].Value;
+                string numeArtist = (string)vAngajat.GetDataGridViewOpere().SelectedRows[0].Cells[indecsiGrid["NumeArtist"]].Value;
+                if (persistentaOperaArta.StergereOperaArta(titluSelectat, numeArtist))
+                {
+                    MessageBox.Show("Stergere incheiata cu succes!");
+                    refresh(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Nu s-a realizat stergere in fisier!");
+                    clearFieldsContent();
+                }
+            }
         }
+
         private void selectieInGrid(object sender, EventArgs e)
         {
-            if (this.vAngajat.GetDataGridViewOpere().SelectedRows.Count == 0)
+            if (vAngajat.GetDataGridViewOpere().SelectedRows.Count == 0)
             {
                 vAngajat.GetTextTitlu().Text = "";
                 vAngajat.GetTextNumeArtist().Text = "";
@@ -332,57 +397,130 @@ namespace ArtGallery.Controller
             }
             else
             {
+                string tipOpera = (string) vAngajat.GetDataGridViewOpere().SelectedRows[0].Cells[indecsiGrid["TipOpera"]].Value;
+
                 string titlu = (string)vAngajat.GetDataGridViewOpere().SelectedRows[0].Cells[indecsiGrid["TitluOpera"]].Value;
                 string numeArtist = (string)vAngajat.GetDataGridViewOpere().SelectedRows[0].Cells[indecsiGrid["NumeArtist"]].Value;
                 int anRealizare = (int)vAngajat.GetDataGridViewOpere().SelectedRows[0].Cells[indecsiGrid["AnRealizare"]].Value;
+                
+                
+
+                if (tipOpera.Equals("operaDeArta"))
+                {
+                    vAngajat.GetComboBoxTipOpera().SelectedIndex = 0;
+                }
+                if (tipOpera.Equals("tablou"))
+                {
+                    vAngajat.GetComboBoxTipOpera().SelectedIndex = 1;
+                    vAngajat.GetLabelGenTip().Text = "Gen Pictura";
+                    vAngajat.GetLabelGenTip().Visible = true;
+                    vAngajat.GetTextGenTip().Visible = true;
+                    vAngajat.GetLabelTehnica().Visible = true;
+                    vAngajat.GetTextTehnica().Visible = true;
+
+                    string genPictura = (string)vAngajat.GetDataGridViewOpere().SelectedRows[0].Cells[indecsiGrid["GenPictura"]].Value;
+                    string tehnicaTablou = (string)vAngajat.GetDataGridViewOpere().SelectedRows[0].Cells[indecsiGrid["TehnicaTablou"]].Value;
+
+                    vAngajat.GetTextGenTip().Text = genPictura;
+                    vAngajat.GetTextTehnica().Text = tehnicaTablou;
+                }
+                if (tipOpera.Equals("sculptura"))
+                {
+                    vAngajat.GetComboBoxTipOpera().SelectedIndex = 2;
+                    vAngajat.GetLabelGenTip().Text = "Tip Sculptura";
+                    vAngajat.GetLabelGenTip().Visible = true;
+                    vAngajat.GetTextGenTip().Visible = true;
+                    vAngajat.GetLabelTehnica().Visible = false;
+                    vAngajat.GetTextTehnica().Visible = false;
+
+                    string tipSculptura = (string)vAngajat.GetDataGridViewOpere().SelectedRows[0].Cells[indecsiGrid["TipSculptura"]].Value;
+
+                    vAngajat.GetTextGenTip().Text = tipSculptura;
+                }
 
                 vAngajat.GetTextTitlu().Text = titlu;
                 vAngajat.GetTextNumeArtist().Text = numeArtist;
                 vAngajat.GetTextAnRealizare().Text = anRealizare.ToString();
             }
+        }       
+
+        private void cautareDupaCriteriu(string informatie, string criteriu)
+        {
+            List<OperaArta> opere = getListaFiltrata(informatie, criteriu);
+            vAngajat.GetDataGridViewOpere().Rows.Clear();
+
+            if (opere != null)
+            {
+                foreach (OperaArta opera in opere)
+                {
+                    DataGridViewRow rand = new DataGridViewRow();
+                    rand.CreateCells(vAngajat.GetDataGridViewOpere());
+                    rand.Cells[indecsiGrid["TitluOpera"]].Value = opera.GetTitlu();
+                    rand.Cells[indecsiGrid["NumeArtist"]].Value = opera.GetNumeArtist();
+                    rand.Cells[indecsiGrid["AnRealizare"]].Value = opera.GetAnRealizare();
+                    if (opera is Tablou)
+                    {
+                        rand.Cells[indecsiGrid["TipOpera"]].Value = "tablou";
+                        rand.Cells[indecsiGrid["GenPictura"]].Value = ((Tablou)opera).GetGenPictura();
+                        rand.Cells[indecsiGrid["TehnicaTablou"]].Value = ((Tablou)opera).GetTehnica();
+                    }
+                    else if (opera is Sculptura)
+                    {
+                        rand.Cells[indecsiGrid["TipOpera"]].Value = "sculptura";
+                        rand.Cells[indecsiGrid["TipSculptura"]].Value = ((Sculptura)opera).GetTip();
+                    }
+                    else
+                    {
+                        rand.Cells[indecsiGrid["TipOpera"]].Value = "operaDeArta";
+                    }
+                    vAngajat.GetDataGridViewOpere().Rows.Add(rand);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nu s-a gasit nicio opera!");
+            }
         }
 
-        private void cautareDupaNumeArtist(string informatie)
+        private List<OperaArta> getListaFiltrata(string informatie, string criteriu)
         {
-            List<OperaArta> opere = persistentaOperaArta.FiltrareOpereArtist(informatie);
-            this.vAngajat.GetDataGridViewOpere().Rows.Clear();
-            if (opere != null)
+            List<OperaArta> opere = new List<OperaArta>();
+
+            switch (criteriu)
             {
-                foreach (OperaArta opera in opere)
-                {
-                    DataGridViewRow rand = new DataGridViewRow();
-                    rand.CreateCells(vAngajat.GetDataGridViewOpere());
-                    rand.Cells[indecsiGrid["TitluOpera"]].Value = opera.GetTitlu();
-                    rand.Cells[indecsiGrid["NumeArtist"]].Value = opera.GetNumeArtist();
-                    rand.Cells[indecsiGrid["AnRealizare"]].Value = opera.GetAnRealizare();
-                    vAngajat.GetDataGridViewOpere().Rows.Add(rand);
-                }
+                case "tipOpera":
+                    opere = persistentaOperaArta.FiltrareOpereTip(informatie);
+                    break;
+                case "titluOpera":
+                    opere = persistentaOperaArta.FiltrareOpereTitlu(informatie);
+                    break;
+                case "numeArtist":
+                    opere = persistentaOperaArta.FiltrareOpereArtist(informatie);
+                    break;
+                case "anRealizare":
+                    opere = persistentaOperaArta.FiltrareOpereAn(informatie);
+                    break;
+                case "genPictura":
+                    opere = persistentaOperaArta.FiltrareOpereGenPictura(informatie);
+                    break;
+                case "tehnicaPictura":
+                    opere = persistentaOperaArta.FiltrareOpereTehnicaPictura(informatie);
+                    break;
+                case "tipSculptura":
+                    opere = persistentaOperaArta.FiltrareOpereTipSculptura(informatie);
+                    break;
             }
-            else
-            {
-                MessageBox.Show("Nu s-a gasit nicio opera!");
-            }
+
+            return opere;
         }
-        private void cautareDupaTipOpera(string informatie)
+
+        private void clearFieldsContent()
         {
-            List<OperaArta> opere = persistentaOperaArta.FiltrareOpereTip(informatie);
-            this.vAngajat.GetDataGridViewOpere().Rows.Clear();
-            if (opere != null)
-            {
-                foreach (OperaArta opera in opere)
-                {
-                    DataGridViewRow rand = new DataGridViewRow();
-                    rand.CreateCells(vAngajat.GetDataGridViewOpere());
-                    rand.Cells[indecsiGrid["TitluOpera"]].Value = opera.GetTitlu();
-                    rand.Cells[indecsiGrid["NumeArtist"]].Value = opera.GetNumeArtist();
-                    rand.Cells[indecsiGrid["AnRealizare"]].Value = opera.GetAnRealizare();
-                    vAngajat.GetDataGridViewOpere().Rows.Add(rand);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Nu s-a gasit nicio opera!");
-            }
+            vAngajat.GetTextTitlu().Text = "";
+            vAngajat.GetTextNumeArtist().Text = "";
+            vAngajat.GetTextAnRealizare().Text = "";
+            vAngajat.GetTextGenTip().Text = "";
+            vAngajat.GetTextTehnica().Text = "";
         }
 
         private Dictionary<string, int> initializareIndecsi()

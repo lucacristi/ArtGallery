@@ -107,8 +107,6 @@ namespace ArtGallery.Controller
             {
                 MessageBox.Show("Nu s-a introdus informatia cautata!");
             }
-
-
         }
 
         private void cautareDupaCriteriu(string informatie, string criteriu)
