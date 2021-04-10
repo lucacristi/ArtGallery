@@ -36,9 +36,6 @@
             this.buttonRefreshOpere = new System.Windows.Forms.Button();
             this.labelListaOpere = new System.Windows.Forms.Label();
             this.dataGridViewOpere = new System.Windows.Forms.DataGridView();
-            this.Titlu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeArtist = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AnRealizare = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonRefreshUseri = new System.Windows.Forms.Button();
             this.labelListaUseri = new System.Windows.Forms.Label();
             this.dataGridViewUseri = new System.Windows.Forms.DataGridView();
@@ -58,13 +55,21 @@
             this.comboBoxCriteriuUseri = new System.Windows.Forms.ComboBox();
             this.labelCriteriuFiltrareUseri = new System.Windows.Forms.Label();
             this.labelDisplayUsername = new System.Windows.Forms.Label();
+            this.TipOpera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titlu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeArtist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AnRealizare = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GenPictura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TehnicaPictura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipSculptura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonLogOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOpere)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUseri)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonCautaOpere
             // 
-            this.buttonCautaOpere.Location = new System.Drawing.Point(24, 542);
+            this.buttonCautaOpere.Location = new System.Drawing.Point(958, 271);
             this.buttonCautaOpere.Name = "buttonCautaOpere";
             this.buttonCautaOpere.Size = new System.Drawing.Size(75, 33);
             this.buttonCautaOpere.TabIndex = 15;
@@ -75,7 +80,7 @@
             // 
             this.labelInformatieCautata.AutoSize = true;
             this.labelInformatieCautata.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInformatieCautata.Location = new System.Drawing.Point(21, 466);
+            this.labelInformatieCautata.Location = new System.Drawing.Point(955, 195);
             this.labelInformatieCautata.Name = "labelInformatieCautata";
             this.labelInformatieCautata.Size = new System.Drawing.Size(296, 29);
             this.labelInformatieCautata.TabIndex = 14;
@@ -83,7 +88,7 @@
             // 
             // textBoxInformatieCautata
             // 
-            this.textBoxInformatieCautata.Location = new System.Drawing.Point(24, 498);
+            this.textBoxInformatieCautata.Location = new System.Drawing.Point(958, 227);
             this.textBoxInformatieCautata.Name = "textBoxInformatieCautata";
             this.textBoxInformatieCautata.Size = new System.Drawing.Size(100, 22);
             this.textBoxInformatieCautata.TabIndex = 13;
@@ -94,7 +99,7 @@
             this.comboBoxCriteriuOpere.Items.AddRange(new object[] {
             "Nume artist",
             "Tip opera"});
-            this.comboBoxCriteriuOpere.Location = new System.Drawing.Point(24, 424);
+            this.comboBoxCriteriuOpere.Location = new System.Drawing.Point(958, 153);
             this.comboBoxCriteriuOpere.Name = "comboBoxCriteriuOpere";
             this.comboBoxCriteriuOpere.Size = new System.Drawing.Size(121, 24);
             this.comboBoxCriteriuOpere.TabIndex = 12;
@@ -103,7 +108,7 @@
             // 
             this.labelCriteriuFiltrareOpere.AutoSize = true;
             this.labelCriteriuFiltrareOpere.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCriteriuFiltrareOpere.Location = new System.Drawing.Point(21, 383);
+            this.labelCriteriuFiltrareOpere.Location = new System.Drawing.Point(955, 112);
             this.labelCriteriuFiltrareOpere.Name = "labelCriteriuFiltrareOpere";
             this.labelCriteriuFiltrareOpere.Size = new System.Drawing.Size(359, 29);
             this.labelCriteriuFiltrareOpere.TabIndex = 11;
@@ -111,7 +116,7 @@
             // 
             // buttonRefreshOpere
             // 
-            this.buttonRefreshOpere.Location = new System.Drawing.Point(216, 329);
+            this.buttonRefreshOpere.Location = new System.Drawing.Point(424, 324);
             this.buttonRefreshOpere.Name = "buttonRefreshOpere";
             this.buttonRefreshOpere.Size = new System.Drawing.Size(75, 32);
             this.buttonRefreshOpere.TabIndex = 10;
@@ -122,48 +127,32 @@
             // 
             this.labelListaOpere.AutoSize = true;
             this.labelListaOpere.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListaOpere.Location = new System.Drawing.Point(120, 57);
+            this.labelListaOpere.Location = new System.Drawing.Point(106, 54);
             this.labelListaOpere.Name = "labelListaOpere";
             this.labelListaOpere.Size = new System.Drawing.Size(276, 26);
             this.labelListaOpere.TabIndex = 9;
             this.labelListaOpere.Text = "LISTA OPERE DE ARTA";
-            this.labelListaOpere.Click += new System.EventHandler(this.labelListaOpere_Click);
             // 
             // dataGridViewOpere
             // 
             this.dataGridViewOpere.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOpere.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TipOpera,
             this.Titlu,
             this.NumeArtist,
-            this.AnRealizare});
-            this.dataGridViewOpere.Location = new System.Drawing.Point(26, 105);
+            this.AnRealizare,
+            this.GenPictura,
+            this.TehnicaPictura,
+            this.TipSculptura});
+            this.dataGridViewOpere.Location = new System.Drawing.Point(12, 102);
             this.dataGridViewOpere.Name = "dataGridViewOpere";
             this.dataGridViewOpere.RowTemplate.Height = 24;
-            this.dataGridViewOpere.Size = new System.Drawing.Size(494, 207);
+            this.dataGridViewOpere.Size = new System.Drawing.Size(896, 207);
             this.dataGridViewOpere.TabIndex = 8;
-            this.dataGridViewOpere.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Titlu
-            // 
-            this.Titlu.HeaderText = "Titlu Opera";
-            this.Titlu.Name = "Titlu";
-            this.Titlu.Width = 150;
-            // 
-            // NumeArtist
-            // 
-            this.NumeArtist.HeaderText = "Nume Artist";
-            this.NumeArtist.Name = "NumeArtist";
-            this.NumeArtist.Width = 150;
-            // 
-            // AnRealizare
-            // 
-            this.AnRealizare.HeaderText = "An Realizare Opera";
-            this.AnRealizare.Name = "AnRealizare";
-            this.AnRealizare.Width = 150;
             // 
             // buttonRefreshUseri
             // 
-            this.buttonRefreshUseri.Location = new System.Drawing.Point(732, 329);
+            this.buttonRefreshUseri.Location = new System.Drawing.Point(139, 705);
             this.buttonRefreshUseri.Name = "buttonRefreshUseri";
             this.buttonRefreshUseri.Size = new System.Drawing.Size(75, 32);
             this.buttonRefreshUseri.TabIndex = 18;
@@ -174,7 +163,7 @@
             // 
             this.labelListaUseri.AutoSize = true;
             this.labelListaUseri.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListaUseri.Location = new System.Drawing.Point(727, 57);
+            this.labelListaUseri.Location = new System.Drawing.Point(137, 394);
             this.labelListaUseri.Name = "labelListaUseri";
             this.labelListaUseri.Size = new System.Drawing.Size(226, 26);
             this.labelListaUseri.TabIndex = 17;
@@ -187,12 +176,11 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            this.dataGridViewUseri.Location = new System.Drawing.Point(613, 105);
+            this.dataGridViewUseri.Location = new System.Drawing.Point(23, 442);
             this.dataGridViewUseri.Name = "dataGridViewUseri";
             this.dataGridViewUseri.RowTemplate.Height = 24;
-            this.dataGridViewUseri.Size = new System.Drawing.Size(443, 207);
+            this.dataGridViewUseri.Size = new System.Drawing.Size(443, 240);
             this.dataGridViewUseri.TabIndex = 16;
-            this.dataGridViewUseri.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -214,7 +202,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(707, 442);
+            this.txtPassword.Location = new System.Drawing.Point(664, 504);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(292, 30);
             this.txtPassword.TabIndex = 23;
@@ -222,7 +210,7 @@
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(707, 379);
+            this.txtUsername.Location = new System.Drawing.Point(664, 441);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(292, 30);
             this.txtUsername.TabIndex = 22;
@@ -231,7 +219,7 @@
             // 
             this.labelTipUser.AutoSize = true;
             this.labelTipUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTipUser.Location = new System.Drawing.Point(611, 498);
+            this.labelTipUser.Location = new System.Drawing.Point(568, 560);
             this.labelTipUser.Name = "labelTipUser";
             this.labelTipUser.Size = new System.Drawing.Size(83, 25);
             this.labelTipUser.TabIndex = 21;
@@ -241,7 +229,7 @@
             // 
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPassword.Location = new System.Drawing.Point(590, 445);
+            this.labelPassword.Location = new System.Drawing.Point(547, 507);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(104, 25);
             this.labelPassword.TabIndex = 20;
@@ -251,12 +239,11 @@
             // 
             this.labelUsername.AutoSize = true;
             this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsername.Location = new System.Drawing.Point(587, 382);
+            this.labelUsername.Location = new System.Drawing.Point(544, 444);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(107, 25);
             this.labelUsername.TabIndex = 19;
             this.labelUsername.Text = "username";
-            this.labelUsername.Click += new System.EventHandler(this.label2_Click);
             // 
             // comboBoxTipUser
             // 
@@ -264,14 +251,14 @@
             this.comboBoxTipUser.Items.AddRange(new object[] {
             "Angajat",
             "Admin"});
-            this.comboBoxTipUser.Location = new System.Drawing.Point(707, 502);
+            this.comboBoxTipUser.Location = new System.Drawing.Point(664, 564);
             this.comboBoxTipUser.Name = "comboBoxTipUser";
             this.comboBoxTipUser.Size = new System.Drawing.Size(292, 24);
             this.comboBoxTipUser.TabIndex = 24;
             // 
             // buttonAdaugaUser
             // 
-            this.buttonAdaugaUser.Location = new System.Drawing.Point(732, 542);
+            this.buttonAdaugaUser.Location = new System.Drawing.Point(689, 604);
             this.buttonAdaugaUser.Name = "buttonAdaugaUser";
             this.buttonAdaugaUser.Size = new System.Drawing.Size(83, 33);
             this.buttonAdaugaUser.TabIndex = 25;
@@ -280,7 +267,7 @@
             // 
             // buttonStergeUser
             // 
-            this.buttonStergeUser.Location = new System.Drawing.Point(881, 329);
+            this.buttonStergeUser.Location = new System.Drawing.Point(288, 705);
             this.buttonStergeUser.Name = "buttonStergeUser";
             this.buttonStergeUser.Size = new System.Drawing.Size(75, 32);
             this.buttonStergeUser.TabIndex = 26;
@@ -289,7 +276,7 @@
             // 
             // buttonEditeazaUser
             // 
-            this.buttonEditeazaUser.Location = new System.Drawing.Point(881, 542);
+            this.buttonEditeazaUser.Location = new System.Drawing.Point(838, 604);
             this.buttonEditeazaUser.Name = "buttonEditeazaUser";
             this.buttonEditeazaUser.Size = new System.Drawing.Size(75, 33);
             this.buttonEditeazaUser.TabIndex = 27;
@@ -298,7 +285,7 @@
             // 
             // buttonCautaUseri
             // 
-            this.buttonCautaUseri.Location = new System.Drawing.Point(810, 723);
+            this.buttonCautaUseri.Location = new System.Drawing.Point(759, 767);
             this.buttonCautaUseri.Name = "buttonCautaUseri";
             this.buttonCautaUseri.Size = new System.Drawing.Size(75, 33);
             this.buttonCautaUseri.TabIndex = 32;
@@ -311,7 +298,7 @@
             this.comboBoxCriteriuUseri.Items.AddRange(new object[] {
             "Angajat",
             "Administrator"});
-            this.comboBoxCriteriuUseri.Location = new System.Drawing.Point(732, 676);
+            this.comboBoxCriteriuUseri.Location = new System.Drawing.Point(681, 720);
             this.comboBoxCriteriuUseri.Name = "comboBoxCriteriuUseri";
             this.comboBoxCriteriuUseri.Size = new System.Drawing.Size(224, 24);
             this.comboBoxCriteriuUseri.TabIndex = 29;
@@ -320,7 +307,7 @@
             // 
             this.labelCriteriuFiltrareUseri.AutoSize = true;
             this.labelCriteriuFiltrareUseri.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCriteriuFiltrareUseri.Location = new System.Drawing.Point(669, 637);
+            this.labelCriteriuFiltrareUseri.Location = new System.Drawing.Point(618, 681);
             this.labelCriteriuFiltrareUseri.Name = "labelCriteriuFiltrareUseri";
             this.labelCriteriuFiltrareUseri.Size = new System.Drawing.Size(357, 25);
             this.labelCriteriuFiltrareUseri.TabIndex = 28;
@@ -330,17 +317,65 @@
             // 
             this.labelDisplayUsername.AutoSize = true;
             this.labelDisplayUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDisplayUsername.Location = new System.Drawing.Point(988, 9);
+            this.labelDisplayUsername.Location = new System.Drawing.Point(1291, 20);
             this.labelDisplayUsername.Name = "labelDisplayUsername";
             this.labelDisplayUsername.Size = new System.Drawing.Size(128, 29);
             this.labelDisplayUsername.TabIndex = 41;
             this.labelDisplayUsername.Text = "username";
             // 
+            // TipOpera
+            // 
+            this.TipOpera.HeaderText = "Tip Opera";
+            this.TipOpera.Name = "TipOpera";
+            // 
+            // Titlu
+            // 
+            this.Titlu.HeaderText = "Titlu Opera";
+            this.Titlu.Name = "Titlu";
+            this.Titlu.Width = 150;
+            // 
+            // NumeArtist
+            // 
+            this.NumeArtist.HeaderText = "Nume Artist";
+            this.NumeArtist.Name = "NumeArtist";
+            this.NumeArtist.Width = 150;
+            // 
+            // AnRealizare
+            // 
+            this.AnRealizare.HeaderText = "An Realizare Opera";
+            this.AnRealizare.Name = "AnRealizare";
+            this.AnRealizare.Width = 150;
+            // 
+            // GenPictura
+            // 
+            this.GenPictura.HeaderText = "Gen Pictura";
+            this.GenPictura.Name = "GenPictura";
+            // 
+            // TehnicaPictura
+            // 
+            this.TehnicaPictura.HeaderText = "Tehnica Pictura";
+            this.TehnicaPictura.Name = "TehnicaPictura";
+            // 
+            // TipSculptura
+            // 
+            this.TipSculptura.HeaderText = "Tip Sculptura";
+            this.TipSculptura.Name = "TipSculptura";
+            // 
+            // buttonLogOut
+            // 
+            this.buttonLogOut.Location = new System.Drawing.Point(1366, 769);
+            this.buttonLogOut.Name = "buttonLogOut";
+            this.buttonLogOut.Size = new System.Drawing.Size(69, 28);
+            this.buttonLogOut.TabIndex = 42;
+            this.buttonLogOut.Text = "Log out";
+            this.buttonLogOut.UseVisualStyleBackColor = true;
+            // 
             // VAdministrator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1128, 781);
+            this.ClientSize = new System.Drawing.Size(1458, 831);
+            this.Controls.Add(this.buttonLogOut);
             this.Controls.Add(this.labelDisplayUsername);
             this.Controls.Add(this.buttonCautaUseri);
             this.Controls.Add(this.comboBoxCriteriuUseri);
@@ -390,9 +425,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Titlu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumeArtist;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AnRealizare;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label labelTipUser;
@@ -406,5 +438,13 @@
         private System.Windows.Forms.ComboBox comboBoxCriteriuUseri;
         private System.Windows.Forms.Label labelCriteriuFiltrareUseri;
         private System.Windows.Forms.Label labelDisplayUsername;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipOpera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Titlu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeArtist;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AnRealizare;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GenPictura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TehnicaPictura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipSculptura;
+        private System.Windows.Forms.Button buttonLogOut;
     }
 }

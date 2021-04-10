@@ -15,26 +15,93 @@ namespace ArtGallery.View
         public VAdministrator()
         {
             InitializeComponent();
+            this.dataGridViewOpere.AllowUserToAddRows = false;
+            this.dataGridViewUseri.AllowUserToAddRows = false;
+
+            for (int i = 0; i < dataGridViewOpere.ColumnCount; i++)
+                this.dataGridViewOpere.Columns[i].ReadOnly = true;
+
+            for (int i = 0; i < dataGridViewUseri.ColumnCount; i++)
+                this.dataGridViewUseri.Columns[i].ReadOnly = true;
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public ComboBox GetComboBoxCriteriuOpere()
         {
-
+            return this.comboBoxCriteriuOpere;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public TextBox GetTextInformatie()
         {
-
+            return this.textBoxInformatieCautata;
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        public Button GetButtonCautareOpere()
         {
-
+            return this.buttonCautaOpere;
         }
 
-        private void labelListaOpere_Click(object sender, EventArgs e)
+        public Button GetButtonRefreshOpere()
         {
-
+            return this.buttonRefreshOpere;
         }
+
+        public DataGridView GetDataGridViewOpere()
+        {
+            return this.dataGridViewOpere;
+        }
+
+        public Button GetButtonLogout()
+        {
+            return this.buttonLogOut;
+        }
+
+        public Label GetUsernameLabel()
+        {
+            return this.labelDisplayUsername;
+        }
+
+        public DataGridView GetDataGridViewUtilizatori()
+        {
+            return this.dataGridViewUseri;
+        }
+
+        public Button GetButtonRefreshUtilizatori()
+        {
+            return this.buttonRefreshUseri;
+        }
+
+        public Button GetButtonStergereUtilizatori()
+        {
+            return this.buttonStergeUser;
+        }
+
+        public TextBox GetTextBoxUsername()
+        {
+            return this.txtUsername;
+        }
+
+        public TextBox GetTextBoxPassword()
+        {
+            return this.txtPassword;
+        }
+
+        public ComboBox GetComboBoxTipUtilizator()
+        {
+            return this.comboBoxTipUser;
+        }
+
+        public Button GetButtonAdaugaUtilizator()
+        {
+            return this.buttonAdaugaUser;
+        }
+        public Button GetButtonEditeazaUtilizator()
+        {
+            return this.buttonEditeazaUser;
+        }
+
+        public ComboBox GetComboBoxFiltrareUtilizatori()
+        {
+            return this.comboBoxCriteriuUseri;
+        } 
     }
 }
