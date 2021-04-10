@@ -46,19 +46,35 @@ namespace ArtGallery.Controller
                 {
                     if (utilizator.GetTipUtilizator().Equals("administrator"))
                     {
-                        MessageBox.Show("Logare cu succes ca admin!");
+                        if (password.Equals(utilizator.GetPassword()))
+                        {
+                            MessageBox.Show("Logare cu succes ca admin!");
 
-                        this.vWelcome.Hide();
-                        CAdministrator cAdministrator= new CAdministrator(utilizator.GetUsername());
-                        cAdministrator.GetVAdministrator().Show();                       
+                            this.vWelcome.Hide();
+                            CAdministrator cAdministrator = new CAdministrator(utilizator.GetUsername());
+                            cAdministrator.GetVAdministrator().Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Parola incorecta!");
+                            vWelcome.GetTextBoxPassword().Text = "";
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Logare cu succes!");
+                        if (password.Equals(utilizator.GetPassword()))
+                        {
+                            MessageBox.Show("Logare cu succes!");
 
-                        this.vWelcome.Hide();
-                        CAngajat cAngajat = new CAngajat(utilizator.GetUsername());
-                        cAngajat.GetVAngajat().Show();
+                            this.vWelcome.Hide();
+                            CAngajat cAngajat = new CAngajat(utilizator.GetUsername());
+                            cAngajat.GetVAngajat().Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Parola incorecta!");
+                            vWelcome.GetTextBoxPassword().Text = "";
+                        }
                     }
                 }
                 else

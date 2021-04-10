@@ -40,7 +40,7 @@ namespace ArtGallery.Controller
 
             if (username.Length > 0 && password.Length > 0)
             {
-                if (this.utilizatorP.FiltrareUtilizatoriUsername(username) != null)
+                if (this.utilizatorP.CautaUtilizator(username) != null)
                 {
                     MessageBox.Show("Exista deja un utilizator cu acest username!");
                 }
@@ -48,7 +48,12 @@ namespace ArtGallery.Controller
                 {
                     Utilizator utilizator = new Utilizator(username, password, "angajat");
                     if (this.utilizatorP.AdaugareUtilizator(utilizator))
+                    {
                         MessageBox.Show("Adaugare incheiata cu succes!");
+                        vSignup.GetTextUsername().Text = "";
+                        vSignup.GetTextPassword().Text = "";
+                    }
+
                     else
                         MessageBox.Show("Nu s-a realizat adaugare in fisier!");
                 }
