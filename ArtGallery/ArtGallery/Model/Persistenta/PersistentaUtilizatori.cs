@@ -128,7 +128,7 @@ namespace ArtGallery.Model.Persistenta
             }
         }
 
-        public List<Utilizator> FiltrareUtilizatori(string tipUtilizator)
+        public List<Utilizator> FiltrareUtilizatoriUsername(string usernameUtilizator)
         {
             List<Utilizator> utilizatori = new List<Utilizator>();
             try
@@ -137,8 +137,33 @@ namespace ArtGallery.Model.Persistenta
                 List<XElement> xElemente = xDoc.Root.Elements(tagUtilizator).ToList();
                 foreach (XElement xElement in xElemente)
                 {
-                    string tip = xElement.Element(tagUtilizator).Value;
-                    if (tip == tipUtilizator)
+                    string username = xElement.Element(tagUsername).Value;
+                    if (username.Equals(usernameUtilizator))
+                    {
+                        string password = xElement.Element(tagPassword).Value;
+                        string tipUtilizator = xElement.Element(tagTipUtilizator).Value;
+                        Utilizator utilizator = new Utilizator(username, password, tipUtilizator);
+                        utilizatori.Add(utilizator);
+                    }
+                }
+                return utilizatori;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+        public List<Utilizator> FiltrareUtilizatoriTip(string tipUtilizator)
+        {
+            List<Utilizator> utilizatori = new List<Utilizator>();
+            try
+            {
+                XDocument xDoc = XDocument.Load(@numeFisier);
+                List<XElement> xElemente = xDoc.Root.Elements(tagUtilizator).ToList();
+                foreach (XElement xElement in xElemente)
+                {
+                    string tip = xElement.Element(tagTipUtilizator).Value;
+                    if (tip.Equals(tipUtilizator))
                     {
                         string username = xElement.Element(tagUsername).Value;
                         string password = xElement.Element(tagPassword).Value;

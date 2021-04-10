@@ -272,6 +272,7 @@
             this.comboBoxTipOpera.Name = "comboBoxTipOpera";
             this.comboBoxTipOpera.Size = new System.Drawing.Size(216, 24);
             this.comboBoxTipOpera.TabIndex = 28;
+            this.comboBoxTipOpera.Text = "Opera de Arta";
             // 
             // buttonSterge
             // 

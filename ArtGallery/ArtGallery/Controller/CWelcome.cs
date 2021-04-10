@@ -44,12 +44,12 @@ namespace ArtGallery.Controller
                 Utilizator utilizator = persistUtilizatori.CautaUtilizator(username);                
                 if (utilizator != null)
                 {
-                    if (utilizator.GetTipUtilizator().Equals("admin"))
+                    if (utilizator.GetTipUtilizator().Equals("administrator"))
                     {
                         MessageBox.Show("Logare cu succes ca admin!");
 
                         this.vWelcome.Hide();
-                        CAdministrator cAdministrator= new CAdministrator();
+                        CAdministrator cAdministrator= new CAdministrator(utilizator.GetUsername());
                         cAdministrator.GetVAdministrator().Show();                       
                     }
                     else

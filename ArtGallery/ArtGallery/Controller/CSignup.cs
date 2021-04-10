@@ -40,7 +40,7 @@ namespace ArtGallery.Controller
 
             if (username.Length > 0 && password.Length > 0)
             {
-                if (this.utilizatorP.CautaUtilizator(username) != null)
+                if (this.utilizatorP.FiltrareUtilizatoriUsername(username) != null)
                 {
                     MessageBox.Show("Exista deja un utilizator cu acest username!");
                 }

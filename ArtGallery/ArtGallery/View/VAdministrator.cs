@@ -30,7 +30,7 @@ namespace ArtGallery.View
             return this.comboBoxCriteriuOpere;
         }
 
-        public TextBox GetTextInformatie()
+        public TextBox GetTextInformatieOpere()
         {
             return this.textBoxInformatieCautata;
         }
@@ -70,7 +70,7 @@ namespace ArtGallery.View
             return this.buttonRefreshUseri;
         }
 
-        public Button GetButtonStergereUtilizatori()
+        public Button GetButtonStergereUtilizator()
         {
             return this.buttonStergeUser;
         }
@@ -103,5 +103,15 @@ namespace ArtGallery.View
         {
             return this.comboBoxCriteriuUseri;
         } 
+
+        public TextBox GetTextBoxInformatieUtilizatori()
+        {
+            return this.textBoxInformatieUseri;
+        }
+
+        public Button GetButtonCautaUtilizatori()
+        {
+            return this.buttonSearchUseri;
+        }
     }
 }
