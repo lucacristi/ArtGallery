@@ -255,7 +255,7 @@ namespace ArtGallery.Controller
                     }
                     else
                     {
-                        Utilizator utilizator = new Utilizator(username, password, tipUtilizator==0?"angajat":"administator");
+                        Utilizator utilizator = new Utilizator(username, password, tipUtilizator==0?"angajat":"administrator");
                         if (persistentaUtilizatori.ActualizareUtilizator(selectedUsername, utilizator))
                         {
                             MessageBox.Show("Actualizare incheiata cu succes!");

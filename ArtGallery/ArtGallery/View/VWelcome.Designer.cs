@@ -114,7 +114,7 @@
             this.linkLabelContinueVizitator.Size = new System.Drawing.Size(176, 24);
             this.linkLabelContinueVizitator.TabIndex = 7;
             this.linkLabelContinueVizitator.TabStop = true;
-            this.linkLabelContinueVizitator.Text = "Continua ca vizitator";      
+            this.linkLabelContinueVizitator.Text = "Continua ca vizitator";
             // 
             // label1
             // 
@@ -133,7 +133,7 @@
             this.linkLabelSignUp.Size = new System.Drawing.Size(66, 17);
             this.linkLabelSignUp.TabIndex = 9;
             this.linkLabelSignUp.TabStop = true;
-            this.linkLabelSignUp.Text = "Inscrie-te";         
+            this.linkLabelSignUp.Text = "Inscrie-te";
             // 
             // label2
             // 
